@@ -33,7 +33,7 @@ export const { setProducts, setStatus } = productSlice.actions;
 export default productSlice.reducer;
 
 export const fetchProducts = createAsyncThunk("product/fetchProducts", async () => {
-    const response = await fetch("http://dulcecami.net.ar:8090/api/collections/Producto/records");
+    const response = await fetch("https://pocketbase.dulcecami.net.ar:8443/api/collections/Producto/records");
     const data = await response.json();
     return data.items;
 });
