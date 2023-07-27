@@ -49,7 +49,7 @@ function Detalle() {
             </div>
             <div className="block">
               <img
-                src={`http://dulcecami.net.ar:8090/api/files/${productoDetalle.collectionId}/${productoDetalle.id}/${productoDetalle.imagen}`}
+                src={`https://pocketbase.dulcecami.net.ar:8443/api/files/${productoDetalle.collectionId}/${productoDetalle.id}/${productoDetalle.imagen}`}
                 alt={productoDetalle.nombreProducto}
                 className="rounded-lg bg-gray-100"
               />

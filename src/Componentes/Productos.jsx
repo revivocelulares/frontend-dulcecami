@@ -49,7 +49,7 @@ function Productos() {
                     <Link to={`/detail/${product.id}`} className="group" key={product.id}>
                         <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
                             <img
-                            src={`http://dulcecami.net.ar:8090/api/files/${product.collectionId}/${product.id}/${product.imagen}`}
+                            src={`https://pocketbase.dulcecami.net.ar:8443/api/files/${product.collectionId}/${product.id}/${product.imagen}`}
                             alt="Imagen del Producto"
                             className="h-full w-full object-cover object-center group-hover:opacity-75"
                             />
