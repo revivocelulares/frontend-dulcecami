@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 function Modal({ closeModal }) {
     const navigate = useNavigate();
 
-    function handleClick() {
+    function handleClick() {        
         closeModal();
         navigate('/');
     }

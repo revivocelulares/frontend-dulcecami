@@ -12,7 +12,7 @@ export default function useVerified() {
     return useQuery({ queryFn: checkVerified, queryKey: ['check-verified', id] });
 }
 
-export async function requestVerification() {
+export async function requestVerificationMail() {
     const email = pb.authStore.model.email;
     const res = await pb.collection("Cliente").requestVerification(email);
     if (res) alert("Mail de verificación enviado!! Revise su Bandeja de Entrada!!");

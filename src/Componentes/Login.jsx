@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import pb from '../lib/pocketbase';
 import { useForm } from 'react-hook-form';
 import useLogin from '../hooks/useLogin';
-import useVerified, { requestVerification } from '../hooks/useVerified';
+import useVerified, { requestVerificationMail } from '../hooks/useVerified';
 import useGoogle from "../hooks/useGoogle";
 
 export default function Login() {

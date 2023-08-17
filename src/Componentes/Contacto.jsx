@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Nav from "./Nav";
 import Footer from "./Footer";
+import Info from "./Info";
 
 function Contacto() {
     const [sending, setSending] = useState(false)
@@ -35,6 +36,7 @@ function Contacto() {
     return (
         <>
             <Nav />
+            <Info />
             {/* <h1 className="flex flex-row justify-center text-3xl text-[#c48056] font-semibold underline">Formulario de Contacto</h1> */}
             <form onSubmit={handle_submit} className="w-full max-w-lg m-auto mt-10">
                 <div className="flex flex-wrap -mx-3 mb-6">

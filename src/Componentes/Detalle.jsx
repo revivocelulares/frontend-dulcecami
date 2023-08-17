@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { add } from "../store/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
+import Info from "./Info";
 
 function Detalle() {
     const { idProducto } = useParams()
@@ -17,13 +18,14 @@ function Detalle() {
     }
 
     function handle_click() {
-      dispatch(add(productoDetalle))
+      dispatch(add({...productoDetalle, precio: valor === 'chico' ? productoDetalle.precio_chico : productoDetalle.precio_grande, tamaño: valor, quantity: 1}));
       alert('Procucto agregado al carrito de manera exitosa!!')
     }
 
     return (
         <>
         <Nav />
+        <Info />
         {/* <h1 className="flex flex-row justify-center text-3xl text-[#c48056] font-semibold underline">Detalle</h1> */}
         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
           <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
@@ -33,10 +35,15 @@ function Detalle() {
                 {productoDetalle.descripcion}
               </p>
               <label className="mt-4 mb-4 text-[#c48056]">Tamaño:  
-                <select name="selector" onChange={handle_change} className="mt-4 mb-4 mx-2 px-2 py-2 rounded-xl text-[#c48056]">
-                  <option selected={true} disabled="disabled">Seleccione un tamaño</option>
-                  <option value="chico">{productoDetalle.tamano[0]}</option>
-                  <option value="grande">{productoDetalle.tamano[1]}</option>
+                <select name="selector" defaultValue={"Seleccione un tamaño"} onChange={handle_change} className="mt-4 mb-4 mx-2 px-2 py-2 rounded-xl text-[#c48056]">
+                  <option value="Seleccione un tamaño" disabled="disabled">Seleccione un tamaño</option>
+                  {
+                    productoDetalle.tamano.map((item) => {
+                      return (
+                        <option key={`${item}`} value={`${item}`}>{item}</option>
+                      )
+                    })
+                  }
                 </select>
               </label>
               <p className="mt-4 mb-4 text-[#c48056]">Precio: <span className="mx-2 text-[#c48056] font-medium">${ !valor ? '' : (valor === 'grande' ? productoDetalle.precio_grande : productoDetalle.precio_chico) }</span></p>

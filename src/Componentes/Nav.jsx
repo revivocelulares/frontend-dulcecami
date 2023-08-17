@@ -209,7 +209,7 @@ function Nav() {
                   role="menuitem"
                   aria-haspopup="false"
                   tabIndex="0"
-                  className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-[#966546] hover:underline lg:px-8"
+                  className="flex items-center gap-2 py-4 text-[#c48056] transition-colors duration-300 hover:text-[#966546] hover:underline lg:px-8"
                   to="/home"
                 >
                   <span>Shop</span>
@@ -232,7 +232,7 @@ function Nav() {
                   role="menuitem"
                   aria-haspopup="false"
                   tabIndex="0"
-                  className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-[#966546] hover:underline lg:px-8"
+                  className="flex items-center gap-2 py-4 text-[#c48056] transition-colors duration-300 hover:text-[#966546] hover:underline lg:px-8"
                   to="/contact"
                 >
                   <span>Contacto</span>
@@ -264,7 +264,7 @@ function Nav() {
                   />
                 </svg>
                 <span className="absolute -top-1.5 -right-1.5 inline-flex items-center justify-center gap-1 rounded-full border-2 border-[#c48056] bg-[#c48056] px-1.5 text-sm text-[#fedfc3]">
-                  {items.length}
+                  {items.cart.length}
                 </span>
               </Link>
             </div>

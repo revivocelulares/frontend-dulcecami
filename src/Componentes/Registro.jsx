@@ -28,6 +28,7 @@ export default function Registro() {
         const carrito = await pb.collection('Carrito').create(infoCart);
 
         if(record) {
+            const res = await pb.collection("Cliente").requestVerification(record.email);
             setRegistrando(false);
             setShowModal(true);
             reset();
