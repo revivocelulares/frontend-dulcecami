@@ -24,7 +24,7 @@ function Carrito() {
 
     const handle_submit = (event) => {
       event.preventDefault();
-      //alert('Acá se hará el pago!!');
+      alert('Acá se hará el pago!!');
     };
 
     const getTotal = () => {
@@ -66,9 +66,9 @@ function Carrito() {
                                   </p>
                                   <div className="flex flex-row items-center gap-3 text-[#c48056] font-medium">
                                     Cantidad: 
-                                    <button onClick={() => decrement(item.id)}>-</button>
-                                    <p className="p-1 underline ">{item.quantity}</p>
-                                    <button onClick={() => increment(item.id)}>+</button>
+                                    <button type="button" onClick={() => decrement(item.id)}>-</button>
+                                    <p className="underline">{item.quantity}</p>
+                                    <button type="button" onClick={() => increment(item.id)}>+</button>
                                   </div>
                                 </h4>
                                 <p className="ml-4 text-lg font-medium text-[#c48056] underline">$ {item.precio * item.quantity}</p>

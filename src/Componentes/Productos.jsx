@@ -47,15 +47,15 @@ function Productos() {
             <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
                 {products?.map((product) => (
                     <Link to={`/detail/${product.id}`} className="group" key={product.id}>
-                        <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+                        <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-[#fedfc3] xl:aspect-h-8 xl:aspect-w-7">
                             <img
                             src={`https://pocketbase.dulcecami.net.ar:8443/api/files/${product.collectionId}/${product.id}/${product.imagen}`}
                             alt="Imagen del Producto"
                             className="h-full w-full object-cover object-center group-hover:opacity-75"
                             />
                         </div>
-                        <h3 className="mt-4 text-sm text-gray-700">{product.nombreProducto}</h3>
-                        <p className="mt-1 text-lg font-medium text-gray-700">$ {product.precio_grande}</p>
+                        <h3 className="mt-4 text-lg text-[#c48056] font-semibold">{product.nombreProducto}</h3>
+                        <p className="mt-1 text-lg font-medium text-[#c48056]">$ {product.precio_grande}</p>
                     </Link>
                 ))}
             </div>
